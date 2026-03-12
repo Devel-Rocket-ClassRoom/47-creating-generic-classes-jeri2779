@@ -12,7 +12,8 @@
 
 ## 문제
 
-입력 타입을 출력 타입으로 변환하는 제네릭 변환기 클래스를 만드세요.
+입력 타입을 출력 타입으로 변환하는 제네릭 변환기 클래스를 
+만드세요.
 
 ### 요구사항
 
@@ -20,7 +21,8 @@
 
 - 생성자에서 `Func<TInput, TOutput>` 타입의 변환 함수를 받음
 - `Convert(TInput input)` 메서드: 입력값을 변환하여 반환
-- `ConvertAll(TInput[] inputs)` 메서드: 배열 전체를 변환하여 `TOutput[]` 반환
+- `ConvertAll(TInput[] inputs)` 메서드:
+- 배열 전체를 변환하여 `TOutput[]` 반환
 
 **테스트**
 
@@ -49,8 +51,10 @@ Hello → 5
 <details>
 <summary>힌트 보기</summary>
 
-- 변환 함수를 필드에 저장: `private Func<TInput, TOutput> _convertFunc;`
-- `ConvertAll`에서는 결과 배열을 생성하고, 각 요소에 `Convert()`를 호출하여 저장
+- 변환 함수를 필드에 저장: 
+- `private Func<TInput, TOutput> _convertFunc;`
+- `ConvertAll`에서는 결과 배열을 생성하고, 
+- 각 요소에 `Convert()`를 호출하여 저장
 - 소수점 버림은 `(int)` 캐스팅으로 처리
 
 </details>
