@@ -5,9 +5,9 @@ using System;
 Console.WriteLine("=== 문자열 → 길이 변환 ===");
 Converter<string, int> converter1 = new Converter<string, int>(str => str.Length);
 string[] words = { "Hello", "World", "C#" };
-int[] lengths = converter1.ConvertAll(words); 
-Console.WriteLine($"{words[0]} → {lengths[0]}"); 
-Console.WriteLine("전체 변환: " + string.Join(", ", lengths));
+int[] lengths = converter1.ConvertAll(words);
+Console.WriteLine($"{words[0]} → {lengths[0]}");
+Console.WriteLine($"전체 변환: " + string.Join(", ", lengths));
 Console.WriteLine();
 
 Console.WriteLine("=== 정수 → 문자열 변환 ===");
