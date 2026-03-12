@@ -6,7 +6,7 @@ Console.WriteLine("코드를 작성하세요.");
 
 public interface IPoolable
 {
-    void Reset();
+    public void Reset();
 }
 
 class ObjectPool<T> where T : class, IPoolable, new()
@@ -20,7 +20,40 @@ class ObjectPool<T> where T : class, IPoolable, new()
 
     public ObjectPool(int initialSize)
     {
-        
-        _maxSize = initialSize * 2;
+
+        _maxSize = initialSize;
     }
+
+    public T Get()
+    {
+        int totalCount = _available.Count + _active.Count;
+        if (_available.Count <= 0)
+        {
+            if (totalCount < _maxSize)
+            {
+                var newItem = new T();
+                _available.Add(newItem);
+                return newItem;
+            }
+            return null;
+        }
+        if (totalCount >= _maxSize)
+        {
+
+            return null;
+        }
+        return null;
+    }
+
 }
+
+class Bullet : IPoolable
+{
+    public bool IsActive;
+    public int X, Y;
+    public int Damage { get; set; }
+    public void Reset()
+    {
+        Damage = 0;
+    }
+}   
