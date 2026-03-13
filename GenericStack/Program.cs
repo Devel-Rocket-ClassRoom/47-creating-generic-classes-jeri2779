@@ -42,8 +42,8 @@ Console.WriteLine($"IsEmpty: {stringQueue.IsEmpty}");
 class SimpleQueue<T> : IEnumerable<T>
 {
     private T[] _items; // 큐의 요소를 저장하는 배열
-    private int _head; // 큐의 시작 인덱스
-    private int _tail; // 큐의 끝 인덱스
+    private int _head; // 큐의 요소 out
+    private int _tail; // 큐의 요소 in
     private int _count; // 큐에 저장된 요소의 개수
     private int _capacity; // 큐의 최대 용량
 
