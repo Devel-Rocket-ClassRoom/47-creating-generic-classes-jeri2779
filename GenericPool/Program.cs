@@ -39,8 +39,7 @@ class ObjectPool<T> where T : class, IPoolable, new()
         }
         if (totalCount >= _maxSize)
         {
-
-            return null;
+            Console.WriteLine("풀이 가득 찼습니다!");
         }
         return null;
     }
@@ -52,8 +51,18 @@ class Bullet : IPoolable
     public bool IsActive;
     public int X, Y;
     public int Damage { get; set; }
+
+    public void Fire(int x, int y)
+    {
+        X = x;
+        Y = y;
+        IsActive = true;
+        Console.WriteLine($"총알 발사! 위치: ({X}, {Y})");
+    }
     public void Reset()
     {
-        Damage = 0;
+        IsActive = false;
+        X = 0;
+        Y = 0;
     }
 }   
